@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+//3. Faça um programa que receba uma string e a retorne escrita de trás pra frente.
+
 int main()
 {
   //declaração de variáveis
