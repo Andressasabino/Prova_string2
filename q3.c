@@ -2,34 +2,34 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(){
-// declarando variaveis
-    char pal[30], cop[30];
-    int i, tam, ig = 0;
-//recebendo a string
-    printf("Digite uma palavra: ");
-    scanf("%s", pal);
+int main() {
+    fflush(stdin);
+    
+    //declarando variáveis
+    char frase[200];
+    int i = 0, cont = 0, tamanho = 0;
 
-//recebendo o tamanho e copiando o inverso da palavra
-    tam = strlen(pal);
-    for(i = 0; i < strlen(pal); i++){
-        cop[i] = pal[tam - 1];
-        tam--;
-    }
-    cop[i] = '\0';
-    tam = strlen(pal);
-//mostrando as palavras
-    printf("A palavra digitada primeiro foi: %s\n a gereada foi: %s\n", pal, cop);
-//comparando pal com cop para ver se são iguais
-    for(i = 0; i < tam; i++){
-        if(pal[i] == cop[i])
-            ig++;
-    }
-//se são palíndromas ou não
-    if(tam == ig)
-        printf("\nÉ palíndroma...\n");
-    else
-        printf("\n Não é palíndroma...\n");
+    //inserindo a frase
+    printf("Coloque uma frase: ");
+    fgets(frase, 201, stdin);
 
-    return 0;
+    //determinando o tamanho da frase
+    tamanho = strlen(frase);
+
+    //percorrendo a frase e verirficando as letras
+    for(i = 0; i < tamanho; i++) {
+        if (((int) frase[i] <= 90) && ((int) frase[i] >= 65)) {
+            cont++;
+        }
+      
+    }
+    //condicionando e mostrando o resultado 
+    if (cont > 0){
+printf("\n Número de letras maiúsculas: %d\n\n", cont);
+   }
+else{
+  printf("\n Não há maiúsculas\n");
+        }
+  
+return 0;
 }
